@@ -1,2 +1,26 @@
 Visit the SIGAR Wiki for documentation, bugs, support, etc.:
 http://sigar.hyperic.com/
+
+
+- [How to build sigar for java binding](#How to build sigar for java binding)
+  * [Prerequisites and limitations](#prerequisites-and-limitations)
+  * [Building sigar](#building-sigar-lib)
+  
+
+# How to build sigar for java binding
+
+##prerequisites-and-limitations
+
+* You need to install Visual Studio 2022 Community Version with Windows SDk 10 
+* Install the apache ant from link - https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
+   * Extract the tar
+   * Set the `bin` folder path of apache in `PATH` environment variable.
+
+##building-sigar-lib
+
+* Open the `x64 Native Tools Command Prompt for VS 2022` from Start Menu
+* Go to the path of java folder of this repo
+   `cd <Workspace>\bindings\java`
+* Run the cmd
+   `ant`
+* Check the output if the build is successful

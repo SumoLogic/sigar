@@ -2268,9 +2268,11 @@ SIGAR_DECLARE(int) sigar_cpu_info_list_get(sigar_t *sigar,
     for (i=0; i<sigar->ncpu; i++) {
         SIGAR_CPU_INFO_LIST_GROW(cpu_infos);
 
-        if (core_rollup && (i % sigar->lcpu)) {
-            continue; /* fold logical processors */
-        }
+        if (sigar->lcpu > 0) {
+			if (core_rollup && (i % sigar->lcpu)) {
+				continue; /* fold logical processors */
+			}
+		}
 
         memcpy(&cpu_infos->data[cpu_infos->number++],
                &info, sizeof(info));
